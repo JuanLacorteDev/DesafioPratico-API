@@ -14,10 +14,6 @@ namespace PracticalChallenge.Api.AutoMapper
         public AutoMapperConfiguracao()
         {
             CreateMap<Produto, ProdutoDto>().ReverseMap();
-            //observado ao fazer teste que quando enviado string vazia no valorUnitario, o mapper ao tentar fazer conversao de string para decimal gerava exceção
-            //codigo abaixo é para corrigir esse comportamento.
-            //CreateMap<ProdutoDto, Produto>()
-            //    .ForMember(dest => dest.ValorUnitario, op => op.MapFrom(orig => string.IsNullOrEmpty(orig.ValorUnitario) ? null : orig.ValorUnitario));
         }
     }
 }
